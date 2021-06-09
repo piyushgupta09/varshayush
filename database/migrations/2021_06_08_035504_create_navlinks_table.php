@@ -17,12 +17,13 @@ class CreateNavlinksTable extends Migration
             $table->id();
             $table->string('group');
             $table->string('title');
-            $table->string('route');
             $table->string('slug')->unique();
             $table->string('icon')->nullable();
             $table->string('info')->nullable();
             $table->boolean('active')->default(true);
             $table->tinyInteger('sequence')->default(1);
+            $table->boolean('hasChild')->default(false);
+            $table->foreignId('parent_id')->nullable()->onDelete('set null');
             $table->timestamps();
         });
     }

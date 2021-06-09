@@ -14,10 +14,41 @@ class NavlinkSeeder extends Seeder
      */
     public function run()
     {
-        Navlink::create(['group' => 'navbar', 'title' => 'Home', 'slug' => 'home', 'route' => 'home']);
-        Navlink::create(['group' => 'navbar', 'title' => 'Shops', 'slug' => 'shop', 'route' => 'shop']);
-        Navlink::create(['group' => 'navbar','title' => 'Plans','slug' => 'plans','route' => 'plans']);
-        Navlink::create(['group' => 'navbar','title' => 'Support','slug' => 'support','route' => 'support']);
-        Navlink::create(['group' => 'navbar','title' => 'Blog','slug' => 'blog','route' => 'blog']);
+        // ID 1
+        Navlink::create(['group' => 'navbar',
+            'title' => 'Home', 'slug' => 'home',
+        ]);
+
+        // ID 2
+        Navlink::create(['group' => 'navbar', 'hasChild' => true,
+            'title' => 'Event', 'slug' => 'event',
+        ]);
+
+        // ID 3
+        Navlink::create(['group' => 'navbar',  'hasChild' => true,
+            'title' => 'People','slug' => 'people',
+        ]);
+
+        // ID 4
+        Navlink::create(['group' => 'navbar',
+            'title' => 'Invitation', 'slug' => 'invitation',
+        ]);
+
+        // Sub-menu for ID 2
+        Navlink::create(['parent_id' => 2, 'group' => 'navbar',
+            'title' => 'Occasion', 'slug' => 'occasion',
+        ]);
+        Navlink::create(['parent_id' => 2, 'group' => 'navbar',
+            'title' => 'Ritual', 'slug' => 'ritual',
+        ]);
+
+        // Sub-menu for ID 3
+        Navlink::create(['parent_id' => 3, 'group' => 'navbar',
+            'title' => 'Guest', 'slug' => 'guest',
+        ]);
+        Navlink::create(['parent_id' => 3, 'group' => 'navbar',
+            'title' => 'Vendor', 'slug' => 'vendor',
+        ]);
+
     }
 }
