@@ -40,4 +40,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function codes()
+    {
+        return json_decode(decrypt($this->two_factor_recovery_codes, true));
+    }
 }

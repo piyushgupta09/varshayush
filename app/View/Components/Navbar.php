@@ -2,10 +2,14 @@
 
 namespace App\View\Components;
 
+use App\Models\Navlink;
 use Illuminate\View\Component;
 
 class Navbar extends Component
 {
+
+    public $navlinks;
+
     /**
      * Create a new component instance.
      *
@@ -13,7 +17,7 @@ class Navbar extends Component
      */
     public function __construct()
     {
-        //
+        $this->navlinks = Navlink::where('group', 'navbar')->get();
     }
 
     /**
