@@ -26,12 +26,17 @@ class NavlinkSeeder extends Seeder
 
         // ID 3
         Navlink::create(['group' => 'navbar',
-            'title' => 'Tasks', 'slug' => 'tasks',
+            'title' => 'Tasks', 'slug' => 'checklists',
+        ]);
+
+        // ID 3
+        Navlink::create(['group' => 'navbar',
+            'title' => 'Venues', 'slug' => 'venues',
         ]);
 
         // ID 4
         Navlink::create(['group' => 'navbar',
-            'title' => 'Profile', 'slug' => 'profile',
+            'title' => 'Settings', 'slug' => 'settings',
         ]);
 
     }

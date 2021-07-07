@@ -1,1 +1,55 @@
 @import '~bootstrap/scss/bootstrap';
+
+// Remove defalt dropdown icon
+.dropstart .dropdown-toggle::before,
+.dropdown-toggle::after {
+    display: none;
+}
+
+.br- {
+    &0 {
+        border-radius: 0;
+    }
+    &tl- {
+        &0 {
+            border-top-left-radius: 0;
+        }
+    }
+    &tr- {
+        &0 {
+            border-top-right-radius: 0;
+        }
+        &1 {
+            border-top-right-radius: 0.25rem;
+        }
+    }
+    &br- {
+        &0 {
+            border-bottom-right-radius: 0;
+        }
+        &1 {
+            border-bottom-right-radius: 0.25rem;
+        }
+    }
+}
+
+.bg-light- {
+    &success { background-color: #19875410; }
+    &danger { background-color: #dc354510; }
+    &primary { background-color: #0d6dfd10; }
+    &secondary { background-color: #ffc10720; }
+    &warning { background-color: #6c757d10; }
+    &teal { background-color: #73ebc7; }
+}
+
+.bg-primary- {
+    &10 { background-color: #0d6dfd10; }
+    &20 { background-color: #0d6dfd20; }
+    &30 { background-color: #0d6dfd30; }
+    &40 { background-color: #0d6dfd40; }
+    &50 { background-color: #0d6dfd50; }
+    &60 { background-color: #0d6dfd60; }
+    &70 { background-color: #0d6dfd70; }
+    &80 { background-color: #0d6dfd80; }
+    &90 { background-color: #0d6dfd90; }
+}

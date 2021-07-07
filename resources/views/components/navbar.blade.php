@@ -38,9 +38,8 @@
                         </li>
                     @elseif (!$navlink->hasParent())
                         <li class="nav-item">
-                            <a class="nav-link px-3 {{ ($loop->first) ? 'active' : '' }}"
-                                aria-current="{{ ($loop->first) ? 'page' : '' }}"
-                                href="{{ $navlink->slug }}">
+                            <a href="/{{ $navlink->slug }}"
+                            class="nav-link px-3 {{ (Request::path() == $navlink->slug) ? 'active' : '' }}">
                                 {{ $navlink->title }}
                             </a>
                         </li>
